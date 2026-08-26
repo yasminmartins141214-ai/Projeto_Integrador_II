@@ -1,67 +1,45 @@
-# Relatório de Arquitetura e Modelagem — Projeto DoaAí
+# Arquitetura da Solução — DoaAí
 
-## 1. Fluxograma do Sistema
+## 1. Fluxo do sistema
 
 ```mermaid
-graph TD
-    A[Usuário / Visitante] --> B{Possui Cadastro?}
-    B -- Não --> C[Criar Conta]
-    B -- Sim --> D[Fazer Login]
-    
-    C --> D
-    D --> E[Painel Principal / Vitrine]
-    
-    E --> F{Escolha de Ação}
-    
-    %% Fluxo de Doação
-    F --> G[Cadastrar Objeto para Doação]
-    G --> H[Preencher Dados: Nome, Fotos, Categoria e Condição]
-    H --> I[(Salvar no Banco de Dados)]
-    I --> J[Objeto fica com Status: DISPONÍVEL]
-    
-    %% Fluxo de Busca e Contato
-    F --> K[Buscar / Filtrar Objetos]
-    K --> L[Visualizar Detalhes do Objeto]
-    L --> M[Demonstrar Interesse / Contatar Doador]
-    M --> N{Combinação realizada com sucesso?}
-    
-    N -- Sim --> O[Doador altera Status para RESERVADO ou DOADO]
-    O --> I
-    N -- Não --> E
-  erDiagram
-    USUARIO ||--o{ OBJETO : "cadastra"
-    USUARIO ||--o{ MENSAGEM : "envia/recebe"
-    CATEGORIA ||--o{ OBJETO : "classifica"
+flowchart TD
+    A[Usuário] --> B{Login / Cadastro}
+    B --> C[Cadastrar objeto para doação]
+    B --> D[Pesquisar objetos disponíveis]
+    B --> E[Entrar em contato com doador]
+    C --> F[(Banco de dados)]
+    D --> F
+    E --> F
+    F --> G[Atualizar status para Doado / Reservado]
+    G --> F
 
-    USUARIO {
-        int id PK
-        string nome
-        string email
-        string senha_hash
-        string telefone
-    }
+graph LR
+    Frontend[Frontend - Web/Mobile] --> API[Backend API]
+    API --> Auth[Módulo de autenticação]
+    API --> Obj[Módulo de objetos]
+    API --> Busca[Módulo de busca]
+    Auth --> DB[(Banco de dados)]
+    Obj --> DB
+    Busca --> DB
 
+erDiagram
+    USUARIO ||--o{ OBJETO : disponibiliza
     OBJETO {
         int id PK
         string titulo
         string descricao
+        string categoria
         string condicao
-        string status "Disponível | Reservado | Doado"
-        string imagem_url
-        int usuario_id FK
-        int categoria_id FK
+        string foto_url
+        string status "disponivel, reservado ou doado"
+        date data_registro
     }
-
-    CATEGORIA {
+    USUARIO {
         int id PK
         string nome
+        string email
+        string telefone
+        string cidade_bairro
     }
 
-    MENSAGEM {
-        int id PK
-        int remetente_id FK
-        int destinatario_id FK
-        int objeto_id FK
-        text conteudo
-        datetime data_envio
-    }
