@@ -1,9 +1,4 @@
 # DoaAí — Arquitetura e Modelagem do Sistema
-
-> Documento de apoio à **Etapa 2 (Planejamento Operacional e Gestão Ágil)** do Projeto Integrador.
-> Contém os diagramas de fluxo, o esquema técnico do sistema e o modelo de dados da plataforma **DoaAí**.
-> Local sugerido no repositório: `/docs/ARQUITETURA.md`
-
 ---
 
 ## 1. Visão Geral da Arquitetura
