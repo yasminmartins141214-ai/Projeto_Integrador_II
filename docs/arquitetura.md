@@ -6,37 +6,51 @@
 flowchart TD
     A[Usuário] --> B{Login / Cadastro}
     B --> C[Cadastrar objeto para doação]
-    B --> D[Pesquisar objetos disponíveis]
-    B --> E[Entrar em contato com doador]
+    B --> D[Pesquisar objetos]
+    B --> E[Visualizar objeto]
     C --> F[(Banco de dados)]
     D --> F
     E --> F
-    F --> G[Atualizar status para Doado / Reservado]
-    G --> F
+    F --> G[Solicitar objeto]
+    G --> H[Marcar como doado]
+    H --> F
 graph LR
     Frontend[Frontend - Web/Mobile] --> API[Backend API]
     API --> Auth[Módulo de autenticação]
     API --> Obj[Módulo de objetos]
     API --> Busca[Módulo de busca]
+    API --> Doacao[Módulo de doações]
     Auth --> DB[(Banco de dados)]
     Obj --> DB
     Busca --> DB
+    Doacao --> DB
 erDiagram
-    USUARIO ||--o{ OBJETO : disponibiliza
+    USUARIO ||--o{ OBJETO : cadastra
+    USUARIO ||--o{ DOACAO : solicita
+    OBJETO ||--o| DOACAO : possui
+
     OBJETO {
         int id PK
         string titulo
         string descricao
         string categoria
-        string condicao
+        string local
         string foto_url
-        string status "disponivel, reservado ou doado"
         date data_registro
+        boolean disponivel
     }
+
     USUARIO {
         int id PK
         string nome
         string email
-        string telefone
-        string cidade_bairro
+        string senha
+    }
+
+    DOACAO {
+        int id PK
+        int usuario_id FK
+        int objeto_id FK
+        date data_solicitacao
+        string status
     }
