@@ -13,7 +13,6 @@ flowchart TD
     E --> F
     F --> G[Atualizar status para Doado / Reservado]
     G --> F
-
 graph LR
     Frontend[Frontend - Web/Mobile] --> API[Backend API]
     API --> Auth[Módulo de autenticação]
@@ -22,7 +21,6 @@ graph LR
     Auth --> DB[(Banco de dados)]
     Obj --> DB
     Busca --> DB
-
 erDiagram
     USUARIO ||--o{ OBJETO : disponibiliza
     OBJETO {
@@ -42,4 +40,3 @@ erDiagram
         string telefone
         string cidade_bairro
     }
-
