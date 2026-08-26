@@ -1,6 +1,3 @@
-Você quer **um único bloco de código**, sem separar os diagramas em blocos diferentes. Aqui está, inteiro, em **um bloco só**:
-
-```text
 # Arquitetura da Solução — DoaAí
 
 ## 1. Fluxo do sistema
