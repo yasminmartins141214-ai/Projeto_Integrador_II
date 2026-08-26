@@ -1,4 +1,5 @@
 # DoaAí — Arquitetura e Modelagem do Sistema
+- **Link para o Trello:** https://trello.com/b/hgIllCey/doai
 ---
 
 ## 1. Visão Geral da Arquitetura
@@ -187,3 +188,4 @@ Este arquivo corresponde à entrega **"Relatório de Arquitetura/Modelagem"** da
 - **Local no repositório:** `/docs/ARQUITETURA.md`
 - **Vínculo:** cartões "Modelagem de dados", "Fluxo de uso", "Arquitetura do sistema" no quadro Trello.
 - **Status do projeto:** em fase de planejamento e levantamento de requisitos — diagramas sujeitos a revisão conforme o desenvolvimento avance.
+
