@@ -1,0 +1,82 @@
+/* Estilos básicos e limpos */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fce4ec; /* Fundo rosa bem clarinho */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #d81b60; /* Rosa escuro/pink no cabeçalho */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.caixa {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #c2185b;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.botao {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.botao:hover {
+    background-color: #c2185b;
+}
+
+.item-cadastrado {
+    background-color: #f8bbd0; /* Rosa suave para os cards de itens */
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    color: #888;
+    font-size: 12px;
+}
