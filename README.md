@@ -252,3 +252,25 @@ REQUISITOS.md
 17. Projeto Integrador
 
 Projeto desenvolvido para a disciplina de Projeto Integrador, com finalidade acadêmica.
+
+# DoaAí — Plataforma de Doação e Reutilização de Objetos - FINALIZADO
+
+Plataforma web desenvolvida para a disciplina de **Projeto Integrador II**.
+
+## 🚀 Tecnologias Utilizadas
+* HTML5
+* CSS3
+* JavaScript
+* LocalStorage (para salvamento local dos dados)
+
+---
+
+## 📥 Como Executar o Projeto
+1. Baixe ou clone este repositório no seu computador.
+2. Acesse a pasta `src/`.
+3. Dê um duplo clique no arquivo **`index.html`** para abrir no seu navegador.
+
+---
+
+## 📌 Resultados Finais
+O sistema permite o cadastro, listagem, pesquisa em tempo real e remoção de itens doados de forma simples e intuitiva.
