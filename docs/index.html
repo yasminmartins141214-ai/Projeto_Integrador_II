@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>DoaAí - Doação de Objetos</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <header>
+        <h1>💖 DoaAí</h1>
+        <p>Plataforma simples para doar e reutilizar objetos</p>
+    </header>
+
+    <div class="container">
+        <!-- Formulário para cadastrar -->
+        <section class="caixa">
+            <h2>Cadastrar novo item</h2>
+            <form id="formulario">
+                <label>Nome do Objeto:</label>
+                <input type="text" id="nome" required placeholder="Ex: Livro, blusa...">
+
+                <label>Categoria:</label>
+                <select id="categoria">
+                    <option value="Roupas">Roupas</option>
+                    <option value="Livros">Livros</option>
+                    <option value="Móveis">Móveis</option>
+                    <option value="Outros">Outros</option>
+                </select>
+
+                <label>Descrição:</label>
+                <textarea id="descricao" required placeholder="Fale um pouco sobre o estado do item"></textarea>
+
+                <label>Contato (WhatsApp ou e-mail):</label>
+                <input type="text" id="contato" required placeholder="(00) 00000-0000">
+
+                <button type="submit" class="botao">Salvar Doação</button>
+            </form>
+        </section>
+
+        <!-- Lista de itens cadastrados -->
+        <section class="caixa">
+            <h2>Itens disponíveis</h2>
+            <input type="text" id="pesquisa" placeholder="Pesquisar item...">
+            <div id="lista">
+                <!-- Os itens aparecem aqui automaticamente -->
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Projeto Integrador - DoaAí</p>
+    </footer>
+
+    <script src="codigo.js"></script>
+</body>
+</html>
